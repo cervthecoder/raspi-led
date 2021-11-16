@@ -5,7 +5,7 @@ import sys
 
 if __name__ == '__main__':
     args = sys.argv.remove('main.py')
-    args = args.split(" ")
+    args = args[0].split(" ")
     print(args)
     args = [str(arg) for arg in args]
     args1 = [arg+", " for arg in args[1:-1]]
