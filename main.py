@@ -4,7 +4,8 @@ import modes
 import sys
 
 if __name__ == '__main__':
-    args = sys.argv
+    args = sys.argv.remove('main.py')
+    args = args.split()
     print(args)
     args = [str(arg) for arg in args]
     args1 = [arg+", " for arg in args[1:-1]]
