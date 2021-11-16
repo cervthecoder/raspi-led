@@ -92,4 +92,5 @@ def change_colors(t, intensity):# Changing between colors, time is the period of
             time.sleep(t)
     else:
         print("Wrong intensity, it needs to be number between 0 and 1")
-          
+def methods():
+    return(["simple_color", "rgba_color", "fade", "bright", "fading", "change_colors"])
