@@ -75,14 +75,16 @@ def fading(t):# Fading one color with time in between changes as arguement
     intensity = [pi.get_PWM_dutycycle(RED_PIN), pi.get_PWM_dutycycle(GREEN_PIN), pi.get_PWM_dutycycle(BLUE_PIN)]
     red, green, blue = intensity
     while stop == False:
-        while red*1.1 <= 255 and green*1.1 <= 255 and blue*1.1 <= 255:
+        while red*1.05 <= 255 and green*1.05 <= 255 and blue*1.05 <= 255:
+            time.sleep(t/2)
             red, green, blue = red*1.1, green*1.1, blue*1.1
             write_pwm(red, green, blue)
-            time.sleep(t)
-        while red*0.9 > 40 and green*0.9 > 40 and blue*0.9 > 40:
+            time.sleep(t/2)
+        while red*0.95 > 40 and green*0.95 > 40 and blue*0.95 > 40:
+            time.sleep(t/2)
             red, green, blue = red*0.9, green*0.9, blue*0.9
             write_pwm(red, green, blue)
-            time.sleep(t)
+            time.sleep(t/2)
 def change_colors(t, intensity):# Changing between colors, time is the period of change, intensity between 0 and 1
     if intensity > 0 and intensity <= 1:
         for red, green, blue in colors.values():
