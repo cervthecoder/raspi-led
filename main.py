@@ -1,10 +1,15 @@
-import modes.py as modes
+# Vyřešit přijímání argumentu, aby se nemuselo přepisovat modes.py
+
+import modes
 import sys
 
 if __name__ == '__main__':
     args = sys.argv
+    args = [str(arg) for arg in args]
     try:
-        if args[0] in modes.methods and len(args)>2:
-        eval(f"modes.{args[0]}({[i for i in args[1:-1]]})")
+        if args[0] in modes.methods:
+            eval(f"modes.{args[0]}("".join({args[1:]}))")
+        elif args[0]=="help":
+            print("help message")
     except:
         print("An error occurred try raspi-led -h")
