@@ -4,7 +4,7 @@ import modes
 import sys
 
 if __name__ == '__main__':
-    args = sys.argv.remove('main.py')
+    args = sys.argv.remove()
     print(args)
     print(args)
     args = [str(arg) for arg in args]
