@@ -42,7 +42,8 @@ def write_pwm(r, g, b):
     pi.set_PWM_dutycycle(BLUE_PIN, b)
 
 def print_colors():
-    print(colors.keys())
+    for i in list(colors.keys()):
+        print(i)
 
 def rgb(rgb):
     colors = rgb.split(", ")
