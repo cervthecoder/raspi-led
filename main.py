@@ -10,6 +10,10 @@ if __name__ == '__main__':
     args = [args[1]] + args1 + [args[-1]]
     print(args)
     if args[0] != args[1]:
+        if args[0] == 'simple_color':
+            args = sys.argv
+            args = args.remove('main.py')
+            eval(f"modes.{args[0]}('{args[1]', {args[2]})")
         if args[0] in modes.methods():
             arg = ''.join(args[1:])
             print(f"modes.{args[0]}({arg})")               
