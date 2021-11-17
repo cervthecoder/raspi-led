@@ -55,7 +55,7 @@ def rgba_color(rgb):# Takes color in format "r, g, b"
 #    red, green, blue = ImageColor.getcolor(rgb, "RGB")
 #    write_pwm(red, green, blue)
 def simple_color(color, intensity):# Writes simple color from the dictionary above with intensity between 0 and 1
-    red, green, blue = colors[color]
+    red, green, blue = colors[str(color)]
     write_pwm(red*intensity, green*intensity, blue*intensity)
 
 def fade():

@@ -5,14 +5,15 @@ import sys
 
 if __name__ == '__main__':
     args = sys.argv
-    print(args)
     args = [str(arg) for arg in args]
-    args1 = [arg+", " for arg in args[1:-1]]
-    args = args1 + [args[-1]]
+    args1 = [arg+", " for arg in args[2:-1]]
+    args = [args[1]] + args1 + [args[-1]]
     print(args)
     try:
         if args[0] in modes.methods():
-            eval(f"modes.{args[0]}("".join({args[1:]}))")
+            arg = ''.join(args[1:])
+            print(f"modes.{args[0]}({arg})")
+            eval(f"modes.{args[0]}({arg})")
         elif args[0]=="help":
             print("help message")
     except:
