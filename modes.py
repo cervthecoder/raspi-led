@@ -55,7 +55,7 @@ def rgba_color(rgb):# Takes color in format "r, g, b"
 #def hex_color(hex):# Takes hex color format
 #    red, green, blue = ImageColor.getcolor(rgb, "RGB")
 #    write_pwm(red, green, blue)
-def simple_color(color, intensity):# Writes simple color from the dictionary above with intensity between 0 and 1
+def simple_color(str(color), intensity):# Writes simple color from the dictionary above with intensity between 0 and 1
     red, green, blue = colors[str(color)]
     write_pwm(red*intensity, green*intensity, blue*intensity)
 
