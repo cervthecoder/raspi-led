@@ -19,5 +19,3 @@ if __name__ == '__main__':
             eval(f"modes.{args[0]}()")
         elif args[0]=="help":
             print("help message")
-    except:
-        print(ValueError)
