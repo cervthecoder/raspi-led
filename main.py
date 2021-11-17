@@ -13,9 +13,8 @@ if __name__ == '__main__':
         if args[0] == 'simple_color':
             args = sys.argv
             args = [str(arg) for arg in args]
-            print(args)
-            color = args[1]
-            eval(f'modes.simple_color(color, args[2])', {"color":color})
+            color = args[2]
+            eval(f'modes.simple_color(color, args[3])', {"color":color})
         if args[0] in modes.methods():
             arg = ''.join(args[1:])
             print(f"modes.{args[0]}({arg})")               
